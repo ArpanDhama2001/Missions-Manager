@@ -1,16 +1,18 @@
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Sidebar from "./components/sidebar/Sidebar";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className="App bg-primary h-screen">
-      <h1 className="text-3xl text-primary">main</h1>
-      <h1 className="text-lg text-primary-muted">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-        fuga excepturi aperiam dolore{" "}
-        <span className="text-accent">quidem</span> rem accusamus consequuntur
-        modi dolor ex.
-      </h1>
-      <button className="bg-accent hover:bg-accent-muted">btn</button>
-      <button className="bg-accent-muted text-primary">btn</button>
-    </div>
+    <main className="h-screen overflow-hidden">
+      <Sidebar open={true} />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </main>
   );
 }
 

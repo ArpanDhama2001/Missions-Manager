@@ -1,21 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 @layer base {
   :root {
-    --secondary: #101820;
-    --: #eedaea;
-    --accent: #cf6bdd;
-    --primary: #292136;
-    --primary-muted: #eedaea;
+    --color-fill: 16, 24, 32;
+    --color-main: 238, 218, 234;
+    --color-accent: 207, 107, 221;
+    --color-sub: 51, 46, 51;
   }
   .light {
-    --primary: #000000;
-    --secondary: #ffffff;
-    --accent: #fca311;
-    --primary-muted: #222222;
-    --secondary-muted: #dddddd;
-    --accent-muted: #fca311b3;
+    --color-fill: 238, 235, 226;
+    --color-main: 8, 9, 9;
+    --color-accent: 153, 148, 127;
+    --color-sub: 211, 207, 193;
+  }
+  .dark {
+    --color-fill: 16, 24, 32;
+    --color-main: 238, 218, 234;
+    --color-accent: 207, 107, 221;
+    --color-sub: 18, 18, 18;
   }
 }

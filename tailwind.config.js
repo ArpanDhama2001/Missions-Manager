@@ -1,30 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        main: "var(--main-color)",
-        bg: "var(--bg-color)",
-        sub: "var(--sub-color)",
-        "sub-alt": "var(--sub-alt-color)",
-        text: "var(--text-color)",
+        primary: withOpacity("--color-main"),
+        secondary: withOpacity("--color-sub"),
+        accent: withOpacity("--color-accent"),
+        fill: withOpacity("--color-fill"),
       },
-      backgroundColor: {
-        primary: "var(--primary)",
-        "primary-muted": "var(--primary-muted)",
-        "secondary-muted": "var(--secondary-muted)",
-        secondary: "var(--secondary)",
-        accent: "var(--accent)",
-        "accent-muted": "var(--accent-muted)",
-      },
-      textColor: {
-        primary: "var(--secondary)",
-        "primary-muted": "var(--secondary-muted)",
-        secondary: "var(--primary)",
-        "secondary-muted": "var(--primary-muted)",
-        accent: "var(--accent)",
-        "accent-muted": "var(--accent-muted)",
+      fontFamily: {
+        heading: ["Montserrat"],
+        body: ["Open Sans"],
       },
     },
   },
